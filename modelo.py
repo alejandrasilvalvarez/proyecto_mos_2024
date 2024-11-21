@@ -131,7 +131,7 @@ def max_distance_constraint(model, v, d):
         model.z[i, c, v2, d2] * model.distances[i, c]
         for i, c, v2, d2 in model.Z_INDEX
         if v2 == v and d2 == d
-    ) <= model.distanciaMax
+    ) <= 150
 model.max_distance_constraint = Constraint(model.V, model.D, rule=max_distance_constraint)
 
 # Restricción 4: Capacidad del centro de distribución
@@ -154,7 +154,7 @@ model.co2_emissions_constraint = Constraint(model.V, rule=co2_emissions_constrai
 
 # Restricción 7: Demanda diaria
 def daily_demand_constraint(model, d):
-    return sum(model.z[i, j, v, d] for i, j, v, d2 in model.Z_INDEX if d2 == d) >= model.demandaDiaria
+    return sum(model.z[i, j, v, d] for i, j, v, d2 in model.Z_INDEX if d2 == d) >= 20000
 model.daily_demand_constraint = Constraint(model.D, rule=daily_demand_constraint)
 
 # Restricción 8: Mantenimiento (cada 10,000 km)
