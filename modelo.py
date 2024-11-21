@@ -200,16 +200,21 @@ solver = SolverFactory('glpk')
 results = solver.solve(model, tee=True)
 
 # Mostrar resultados
-print("\n==== Resultados ====")
-for v in model.V:
-    for d in model.D:
-        for e in model.E:
-            if model.x[e, d, v].value > 0.5:
-                print(f"Vehículo {v} carga entrega {e} el día {d}")
-        for i in model.CD | model.C:
-            for j in model.C:
-                if model.z[i, j, v, d].value > 0.5:
+if results.solver.termination_condition == TerminationCondition.infeasible:
+    print("El modelo no tiene solución factible.")
+elif results.solver.termination_condition == TerminationCondition.optimal:
+    print("\n==== Resultados ====")
+    for v in model.V:
+        for d in model.D:
+            for e in model.E:
+                if model.x[e, d, v].value and model.x[e, d, v].value > 0.5:
+                    print(f"Vehículo {v} carga entrega {e} el día {d}")
+            for i, j, v2, d2 in model.Z_INDEX:
+                if model.z[i, j, v2, d2].value and model.z[i, j, v2, d2].value > 0.5 and v2 == v and d2 == d:
                     print(f"Vehículo {v} transporta de {i} a {j} el día {d}")
-        if model.w[v, d].value > 0.5:
-            print(f"Vehículo {v} realiza mantenimiento el día {d}")
-print("Costo total:", model.objective())
+            if model.w[v, d].value and model.w[v, d].value > 0.5:
+                print(f"Vehículo {v} realiza mantenimiento el día {d}")
+    print("Costo total:", model.objective())
+else:
+    print("El solver no encontró una solución óptima.")
+
