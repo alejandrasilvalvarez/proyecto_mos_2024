@@ -122,6 +122,6 @@ for v in model.V:
 
 # Guardar en archivo CSV
 routes_df = pd.DataFrame(routes, columns=['ID-Vehiculo', 'ID-Origen', 'ID-Destino'])
-routes_df.to_csv("grupo8-caso-escenarioprueba-3-ruta.csv", index=False)
+routes_df.to_csv("./rutas/grupo8-caso-escenarioprueba-3-ruta.csv", index=False)
 
-print("Archivo generado: grupo8-caso-escenarioprueba-3-ruta.csv")
+print("Archivo generado: rutas/grupo8-caso-escenarioprueba-3-ruta.csv")
