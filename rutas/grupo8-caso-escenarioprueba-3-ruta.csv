@@ -1,0 +1,14 @@
+ID-Vehiculo,ID-Origen,ID-Destino
+Gas Car,NCliente1,NCliente2
+Gas Car,NCliente2,NBodega5
+Gas Car,NCliente4,NCliente1
+Gas Car,NCliente6,NCliente4
+Gas Car,NCliente7,NCliente8
+Gas Car,NCliente8,NBodega4
+Gas Car,NCliente9,NBodega7
+Gas Car,NBodega4,NCliente7
+Gas Car,NBodega6,NCliente6
+Gas Car,NBodega7,NCliente9
+drone,NCliente3,NBodega9
+drone,NCliente5,NCliente3
+drone,NBodega9,NCliente5
