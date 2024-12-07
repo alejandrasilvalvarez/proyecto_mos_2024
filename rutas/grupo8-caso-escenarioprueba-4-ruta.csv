@@ -1,0 +1,13 @@
+ID-Vehiculo,ID-Origen,ID-Destino,Productos-Transportados
+Gas Car,NCliente2,NCliente4,"{'Product-Type-A': 13, 'Product-Type-B': 13, 'Product-Type-C': 13}"
+Gas Car,NCliente3,NCliente2,"{'Product-Type-A': 18, 'Product-Type-B': 18, 'Product-Type-C': 18}"
+Gas Car,NCliente4,NCliente8,"{'Product-Type-A': 14, 'Product-Type-B': 14, 'Product-Type-C': 14}"
+Gas Car,NCliente7,NCliente3,"{'Product-Type-A': 11, 'Product-Type-B': 11, 'Product-Type-C': 11}"
+Gas Car,NCliente8,NBodega4,"{'Product-Type-A': 17, 'Product-Type-B': 17, 'Product-Type-C': 17}"
+Gas Car,NCliente9,NBodega12,"{'Product-Type-A': 12, 'Product-Type-B': 12, 'Product-Type-C': 12}"
+Gas Car,NBodega9,NCliente7,"{'Product-Type-A': 0, 'Product-Type-B': 0, 'Product-Type-C': 0}"
+Gas Car,NBodega10,NCliente9,"{'Product-Type-A': 0, 'Product-Type-B': 0, 'Product-Type-C': 0}"
+EV,NCliente1,NCliente5,"{'Product-Type-A': 19, 'Product-Type-B': 19, 'Product-Type-C': 19}"
+EV,NCliente5,NCliente6,"{'Product-Type-A': 17, 'Product-Type-B': 17, 'Product-Type-C': 17}"
+EV,NCliente6,NBodega6,"{'Product-Type-A': 16, 'Product-Type-B': 16, 'Product-Type-C': 16}"
+EV,NBodega5,NCliente1,"{'Product-Type-A': 0, 'Product-Type-B': 0, 'Product-Type-C': 0}"
